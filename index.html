@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polymnia Christofi | Portfolio</title>
+  <meta name="description" content="Polymnia Christofi - Business Analyst portfolio.">
+  <meta property="og:title" content="Polymnia Christofi | Portfolio">
+  <meta property="og:description" content="Polymnia Christofi - Business Analyst portfolio.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --text: #f5f5f5;
+      --muted: #a1a1a1;
+      --accent: #01153E;
+      --border: rgba(255, 255, 255, 0.10);
+      --card: #141414;
+      --blue: rgba(173, 190, 255, 0.95);
+
+      /* purple hover */
+      --purple: rgb(190, 120, 255);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont;
+      background:
+        radial-gradient(800px 400px at 80% 20%, rgba(1, 21, 62, 0.22), transparent 60%),
+        radial-gradient(700px 380px at 20% 80%, rgba(1, 21, 62, 0.14), transparent 60%),
+        linear-gradient(180deg, #0b0b0b 0%, #070707 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Ensure anchored sections don't hide under fixed nav */
+    section[id] {
+      scroll-margin-top: 92px;
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(1, 21, 62, 0.55);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      white-space: nowrap;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* HERO */
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 110px 24px 44px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 64px;
+      align-items: center;
+      min-height: 82vh;
+    }
+
+    h1 {
+      font-size: 3.6rem;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+      transition: color 0.2s ease;
+      cursor: default;
+    }
+
+    h1:hover { color: var(--purple); }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.90);
+      font-weight: 600;
+      margin-bottom: 14px;
+      transition: color 0.2s ease;
+      cursor: default;
+    }
+
+    .subtitle:hover { color: var(--purple); }
+
+    .role {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+      margin-bottom: 18px;
+      transition: color 0.2s ease;
+      cursor: default;
+    }
+
+    .role:hover { color: var(--purple); }
+
+    .muted {
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .btn.primary {
+      background: #ffffff;
+      color: #000;
+      border: none;
+      box-shadow: 0 12px 30px rgba(1, 21, 62, 0.35);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: .92;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .quick-links {
+      display: flex;
+      gap: 14px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .quick-links a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    .quick-links a:hover {
+      color: var(--text);
+      border-bottom-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .avatar-outer {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      background: radial-gradient(circle, rgba(1, 21, 62, 0.30) 0%, rgba(1, 21, 62, 0.14) 45%, transparent 70%);
+    }
+
+    .avatar-ring {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(1, 21, 62, 0.95));
+    }
+
+    .avatar-ring img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #111;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow:
+        0 0 0 5px rgba(255, 255, 255, 0.9),
+        0 0 0 10px rgba(173, 190, 255, 0.85);
+    }
+
+    .avatar-outer:hover img {
+      transform: scale(1.05);
+      box-shadow:
+        0 0 0 5px rgba(255, 255, 255, 0.95),
+        0 0 0 10px rgba(173, 190, 255, 0.9),
+        0 0 30px rgba(173, 190, 255, 0.7);
+    }
+
+    @media (max-width: 900px) {
+      .wrap {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 110px;
+        min-height: auto;
+      }
+
+      .wrap>section:first-child {
+        order: 2;
+      }
+
+      .wrap>section:last-child {
+        order: 1;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .quick-links {
+        justify-content: center;
+      }
+
+      .avatar-outer {
+        margin: 24px auto 0;
+      }
+    }
+
+    /* SECTION BASE */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 24px 52px;
+    }
+
+    .section h2 {
+      font-size: 3.2rem;
+      margin: 0 0 24px;
+      text-align: center;
+    }
+
+   .section h2 { transition: color 0.2s ease; }
+.section h2:hover { color: var(--purple); }
+
+    /* SKILLS wrappers */
+    .skills-grid,
+    .skills-grid2,
+    .skills-grid3 {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .skill-card {
+      width: min(500px, 100%);
+      max-width: 520px;
+      height: auto;
+      min-height: 200px;
+      box-sizing: border-box;
+
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(195, 194, 194, 0.059);
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.238);
+      margin-bottom: 32px;
+
+      transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      border-color: rgb(175, 195, 255);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .skill-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.8rem;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+
+    .skill-card:hover h3 {
+      color: rgb(175, 195, 255);
+    }
+
+    .skill-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .skill-list li {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 2px solid rgb(175, 195, 255);
+      font-size: 1rem;
+      line-height: 1.2;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .skill-list li:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow:
+        0 0 0 1px rgba(175, 195, 255, 0.6),
+        0 0 18px rgba(175, 195, 255, 0.45),
+        0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    @media (max-width: 420px) {
+      .skill-card h3 {
+        font-size: 1.45rem;
+      }
+
+      .skill-list li {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+      }
+    }
+
+    /* EDUCATION + EXPERIENCE cards */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+    }
+
+    .edu-card {
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--purple);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .edu-item {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 14px;
+      align-items: start;
+      list-style: none;
+    }
+
+    .edu-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+
+    .edu-title {
+      margin: 0 0 4px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.95);
+      transition: color 0.25s ease;
+    }
+
+    .edu-card:hover .edu-title {
+      color: var(--purple);
+    }
+
+    .edu-degree {
+      margin: 0 0 6px;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .edu-meta {
+      margin: 0 0 10px;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.65);
+      font-weight: 600;
+    }
+
+    .edu-bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.75;
+      list-style: none;
+    }
+
+    .exp-bullets {
+      list-style: disc;
+      padding-left: 18px;
+    }
+
+    /* PROJECTS */
+    .thesis {
+      margin-bottom: 30px;
+    }
+
+    .thesis .project-card {
+      border-color: rgba(175, 195, 255, 0.35);
+      box-shadow: 0 0 30px rgba(175, 195, 255, 0.08);
+    }
+
+    .thesis .project-card:hover {
+      border-color: rgb(175, 195, 255);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55), 0 0 40px rgba(175, 195, 255, 0.18);
+    }
+
+    .thesis .preview {
+      -webkit-line-clamp: 7;
+      line-clamp: 7;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      display: block;
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(195, 194, 194, 0.059);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      min-height: 200px;
+      text-align: center;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: rgb(175, 195, 255);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .project-card h4 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+    }
+
+    .project-card:hover h4 {
+      color: rgb(175, 195, 255);
+    }
+
+    .preview {
+      margin: 0;
+      color: var(--muted);
+      white-space: pre-line;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+
+    .readmore {
+      display: inline-block;
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.92rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* MODAL */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 3000;
+    }
+
+    .modal:target {
+      display: flex;
+    }
+
+    .modal-backdrop {
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(6px);
+      cursor: pointer;
+    }
+
+    .modal-box {
+      position: relative;
+      width: min(920px, 100%);
+      max-height: min(78vh, 900px);
+      overflow: auto;
+      border-radius: 18px;
+      background: rgba(20, 20, 20, 0.98);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+      padding: 22px;
+    }
+
+    .modal-title {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    .modal-text {
+      margin: 0;
+      color: var(--muted);
+      white-space: pre-line;
+      line-height: 1.75;
+    }
+
+    .modal-close {
+      position: sticky;
+      top: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      float: right;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.92);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .modal-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* CONTACT (put this INSIDE the same <style>) */
+#contact { text-align: center; }
+
+.contact-kicker {
+  letter-spacing: 0.22em;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 14px;
+}
+
+.contact-tagline {
+  margin: 0 auto 34px;
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 980px;
+  margin: 0 auto 22px;
+}
+
+.contact-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-decoration: none;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, color .2s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-pill:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.90);
+}
+
+.contact-pill .icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(173, 190, 255, 0.12);
+  border: 1px solid rgba(173, 190, 255, 0.18);
+  color: rgba(173, 190, 255, 0.95);
+  font-weight: 900;
+  flex: 0 0 auto;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 80px;
+  padding: 24px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 900px) {
+  .contact-row { grid-template-columns: 1fr; }
+
+  h1 { font-size: 2.6rem; }
+  .section h2 { font-size: 2.4rem; }
+
+  .avatar-outer { width: 240px; height: 240px; }
+  .avatar-ring  { width: 210px; height: 210px; }
+
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 0.8rem; }
+
+  .muted { text-align: left; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  .section h2 { font-size: 1.9rem; }
+
+  .avatar-outer { width: 180px; height: 180px; }
+  .avatar-ring  { width: 158px; height: 158px; }
+
+  .nav-links { gap: 10px; }
+  .nav-links a { font-size: 0.75rem; }
+}
+  </style>
+</head>
+
+<body>
+  <!-- NAV (UPDATED ORDER) -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="logo" href="#">PC</a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Professional Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section>
+      <div class="subtitle">WELCOME TO MY PORTFOLIO</div>
+      <h1>Polymnia Christofi</h1>
+      <div class="role">Business Analyst</div>
+
+      <p class="muted">
+        The very essence of analytics stimulates my mind and fuels my curiosity. Currently pursuing an MSc in Business
+        Analytics at University College London, with a BSc in Business Analytics at the University of Amsterdam, I have
+        developed a strong foundation in machine learning, data engineering, operations analytics, statistical analysis
+        and strategy, alongside programming experience in Python, R, and SQL, applying these tools to real-world
+        business problems.
+      </p>
+      <p class="muted">
+        I am particularly drawn to uncovering patterns in large, complex datasets and tackling the challenges of
+        building machine-learning models, analysing large-scale data, and applying statistical techniques.
+      </p>
+      <p class="muted">
+        Ultimately, I am motivated by turning data into actionable insight in today’s rapidly evolving, AI-driven
+        landscape, where continuous learning and innovation are essential.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+
+      <div class="quick-links">
+        <a href="https://www.linkedin.com/in/polymniachr/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/PolymniaC" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="avatar-outer">
+        <div class="avatar-ring">
+          <img src="Polymnia_Photo.jpg" alt="Polymnia Christofi">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PROJECTS (MOVED UP) -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="thesis">
+      <a class="project-card" href="#p1">
+        <h4>Bachelor Thesis - Career Path Analysis of UVA Graduates - A Data-Driven Approach</h4>
+        <p class="preview">Built an end-to-end scalable Python data pipeline (Google Custom Search API, automated LinkedIn scraping, preprocessing) to collect and structure career data for UvA alumni. Engineered career progression features and developed logistic regression models using scikit-learn for model experimentation and validation (stratified cross-validation, class imbalance handling) and statsmodels for statistical inference, analysing predictors of executive career attainment (Director, Partner, CFO), evaluated using F1, ROC-AUC and McFadden's pseudo R².</p>
+        <span class="readmore">Read more…</span>
+      </a>
+    </div>
+
+    <div class="projects-grid">
+      <a class="project-card" href="#p10">
+        <h4>Multi-Agent Film Intelligence System</h4>
+        <p class="preview">Built a multi-agent AI data pipeline ingesting movie metadata, audience reviews, and plot summaries from 3 sources (TMDB API, Letterboxd scraping, Wikipedia) into 4 specialised databases (PostgreSQL, MongoDB, ChromaDB, Neo4j) with retrieval-augmented generation, sentiment augmentation, and data lineage tracking via Marquez. Developed a LangGraph ReAct two-agent system with locally deployed Ollama LLM, hallucination checking, and 6 custom database tools exposed via FastAPI with SSE streaming, a Model Context Protocol server and Docker containerisation.</p>
+        <span class="readmore">Read more…</span>
+      </a>
+
+      <a class="project-card" href="#p9">
+        <h4>University and City Analytics Data Pipeline</h4>
+        <p class="preview">Built an ETL pipeline integrating multiple APIs, scraped data, and public datasets to analyse 500+ universities and 160+ cities. Implemented Spark-based transformations and star-schema joins, producing analytics-ready datasets stored in Parquet. Developed SQL analytics with DuckDB and containerised the workflow using Docker enabling reproducible data processing.</p>
+        <span class="readmore">Read more…</span>
+      </a>
+
+      <a class="project-card" href="#p2">
+        <h4>Marketing Analytics</h4>
+        <p class="preview">Analysed a bubble tea business case by conducting 5C and STP analysis. Used R to compute customer acquisition costs (CAC) for blanket, targeted, and SEM approaches, estimated customer lifetime value (CLV) for foodie and non-foodie segments, and evaluated effect of loyalty programs. Used R to compute break-even response rates and ROI, conducting rule-based RFM segmentation to identify high-response customer segments. Applied K-means clustering as an unsupervised method for segment-level targeting, and implemented decision trees and random forests as supervised models to predict individual response probabilities and compute ROI for model-based targeted marketing. Ran marketing mix modeling regressions in R, interpreted coefficients, and discussed endogeneity issues in Amazon's pricing context. Applied causal inference techniques, including randomisation and inclusion of instrumental variables, to identify the causal effect of price on sales and implemented two-stage least squares regressions.</p>
+        <span class="readmore">Read more…</span>
+      </a>
+
+      <a class="project-card" href="#p3">
+        <h4>Statistical Foundations of Business Analytics</h4>
+        <p class="preview">Conducted exploratory data analysis on firm level sustainability and cost data, examining distributions, skewness, sector differences and relationships between variables. Built and validated a regression model to explain operating expenditure, interpreting key drivers and elasticities, evaluating the impact of initiatives, testing for sector differences and assessing regression assumptions and model limitations.</p>
+        <span class="readmore">Read more…</span>
+      </a>
+
+      <a class="project-card" href="#p4">
+        <h4>Business Strategy and Analytics</h4>
+        <p class="preview">Created Python based data visualisation to explore relationships between movie genres, runtimes, and critic scores. Critically assessed a generative AI generated visualisation, focusing on design quality, interpretability, and effectiveness. Interpreted regression coefficients to identify and explain most important insights. Designed a structured employee survey to understand attitudes towards the use of productivity and communications tools in the workplace, applying best practice survey design principles to ensure clarity, validity, and effective data collection.</p>
+        <span class="readmore">Read more…</span>
+      </a>
+
+      <a class="project-card" href="#p5">
+        <h4>SkyWest Strategy Proposal</h4>
+        <p class="preview">Conducted regression analysis using airport level operational data from SkyWest Airlines to examine the key drivers of flight delays. Cleaned and prepared the dataset, identified a heavily right skewed distribution of delay minutes, and applied a log transformation to improve model validity by better meeting OLS assumptions. Estimated and interpreted a log-linear regression model with airport fixed effects to control for structural differences across airports. Used regression results and supporting visualisations to identify the most important operational drivers of delays and inform strategic recommendations, including standardised turnaround processes and targeted operational buffers to reduce delay propagation.</p>
+        <span class="readmore">Read more…</span>
+      </a>
+
+      <a class="project-card" href="#p6">
+        <h4>Predicting Customer Churn in the Telecommunications Industry Using Machine Learning</h4>
+        <p class="preview">Conducted a machine learning analysis to predict customer churn using a real-world telecommunications dataset. Cleaned and prepared the data by removing invalid empty-string entries that caused preprocessing errors, converting data types, encoding categorical variables, and engineering new features. Performed exploratory data analysis using distributions, boxplots, correlation heatmaps, and churn segmentation to support modelling decisions. Trained and evaluated logistic regression and random forest classifiers for binary churn prediction, comparing performance using accuracy, precision, recall, F1-score, ROC-AUC, and confusion matrices. Assessed multicollinearity using VIF to support model interpretation, and concluded that logistic regression was the stronger and more suitable predictive model for this churn classification task.</p>
+        <span class="readmore">Read more…</span>
+      </a>
+
+      <a class="project-card" href="#p7">
+        <h4>HR Analytics, Addressing Talent Turnover for ABS Tech</h4>
+        <p class="preview">During my university HR Analytics course, I led a consulting project aimed at tackling high talent turnover at ABS Tech and developing strategic recommendations to enhance employee retention and overall organizational performance. Our team leveraged employee data, conducted data analysis, identified turnover causes, developed strategic recommendations, demonstrated business value, and presented our findings and recommendations in a report as well as a presentation.</p>
+        <span class="readmore">Read more…</span>
+      </a>
+
+      <a class="project-card" href="#p8">
+        <h4>Machine Learning, Final Project Report</h4>
+        <p class="preview">The primary objective of this study was to develop a machine learning model that can accurately predict the popularity of online news articles. Our approach involved analyzing various elements of an article, including its content, emotional impact, and the timing of its publication, to determine how these factors collectively influence the likelihood of an article being shared. After cleaning the data and using various scaling techniques such as Min-Max Scaling, Robust Scaling, and Standard Scaling, we drew correlation heatmaps and boxplots to understand the effect of attributes like the day of the week on the number of shares, ultimately identifying key factors that influence article popularity. Finally, we concluded that the day of the week significantly impacted article popularity, with articles published on certain days (like weekends) demonstrating a higher likelihood of falling into the high engagement category.</p>
+        <span class="readmore">Read more…</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Languages</h3>
+        <ul class="skill-list">
+          <li>English</li>
+          <li>Greek</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Programming Languages</h3>
+        <ul class="skill-list">
+          <li>Python</li>
+          <li>R</li>
+          <li>SQL</li>
+          <li>LaTeX</li>
+          <li>Stata</li>
+          <li>Linux</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skills-grid2">
+      <div class="skill-card">
+        <h3>Tools & Frameworks</h3>
+        <ul class="skill-list">
+          <li>Tableau</li>
+          <li>Excel</li>
+          <li>PowerPoint</li>
+          <li>Word</li>
+          <li>Jupyter Notebook</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Data Analysis</h3>
+        <ul class="skill-list">
+          <li>Pandas</li>
+          <li>NumPy</li>
+          <li>Matplotlib</li>
+          <li>Seaborn</li>
+          <li>ggplot2</li>
+          <li>Exploratory Data Analysis (EDA)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skills-grid3">
+      <div class="skill-card">
+        <h3>Data Engineering & Databases</h3>
+        <ul class="skill-list">
+          <li>End-to-End ETL Pipelines</li>
+          <li>Apache Spark</li>
+          <li>PostgreSQL</li>
+          <li>SQLite</li>
+          <li>MongoDB</li>
+          <li>DuckDB</li>
+          <li>Docker</li>
+          <li>Parquet</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Machine Learning</h3>
+        <ul class="skill-list">
+          <li>Scikit-learn</li>
+          <li>Supervised Learning</li>
+          <li>Unsupervised Learning</li>
+          <li>Model Building</li>
+          <li>Model Evaluation & Validation</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Statistical Methods</h3>
+        <ul class="skill-list">
+          <li>Regression Analysis</li>
+          <li>Hypothesis Testing</li>
+          <li>Probability & Distributions</li>
+          <li>Causal Inference</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-item">
+          <img class="edu-logo" src="ucl-logo.png" alt="University College London (UCL) logo">
+          <div>
+            <p class="edu-title">University College London (UCL)</p>
+            <p class="edu-degree">MSc Business Analytics</p>
+            <p class="edu-meta">London, UK︱ Sep 2025 - Present</p>
+            <ul class="edu-bullets">
+              <li>Relevant Modules: Machine Learning for Business, Data Engineering, Predictive Analytics, Operations
+                Analytics, Marketing Analytics, Statistical Foundations of Business Analytics, Business Strategy and
+                Analytics, Programming for Business Analytics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-item">
+          <img class="edu-logo" src="uva-logo.png" alt="University of Amsterdam (UvA) logo">
+          <div>
+            <p class="edu-title">University of Amsterdam (UvA)</p>
+            <p class="edu-degree">BSc Business Analytics</p>
+            <p class="edu-meta">Amsterdam, Netherlands ︱ Sep 2022 – Jun 2025</p>
+            <ul class="edu-bullets">
+              <li><strong>Thesis:</strong> “Bachelor Thesis: Career Path Analysis of UvA Graduates - A Data-Driven Approach”:
+                Developed a custom data pipeline to collect, process, and analyze alumni career data.
+
+                My research focused on analyzing the career trajectories of UvA alumni, with the goal of identifying key factors that drive long-term career success, defined as reaching executive roles such as Director, Partner, or CFO.
+                I was incredibly honored to receive a grade of 9.0/10.0 for this project.
+              </li>
+              <li>Modules: Probability Theory and Statistics, Advanced Linear Algebra, Calculus, Econometrics, Finance,
+                Machine Learning, Text Retrieval and Mining, Computer Systems and Engineering, Data Science, Operations Research, etc.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <h2>Professional Experience</h2>
+
+    <div class="edu-grid">
+      <div class="edu-card">
+        <p class="edu-title">Unilever Customer Development Data & Analytics Intern</p>
+        <p class="edu-meta">Amsterdam, Netherlands</p>
+
+        <p class="muted" style="max-width:none; margin: 0;">
+  Worked on a large-scale, data-driven price elasticity model, aiming to deliver best-in-class elasticities for the global nutrition portfolio.
+</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="contact-kicker">GET IN TOUCH</div>
+    <h2>Let’s Connect</h2>
+    <p class="contact-tagline">If you’d like to discuss analytics projects, opportunities, or collaborations, I’d be
+      happy to hear from you.</p>
+
+    <div class="contact-row">
+      <a class="contact-pill contact-pill-email" href="mailto:polymnaichr@hotmail.com" data-email="polymnaichr@hotmail.com">
+        <span class="icon">@</span>
+        <span class="contact-email-label">Email</span>
+      </a>
+
+      <a class="contact-pill" href="https://www.linkedin.com/in/polymniachr/" target="_blank" rel="noopener">
+        <span class="icon">in</span>
+        <span>LinkedIn</span>
+      </a>
+
+      <a class="contact-pill" href="https://github.com/PolymniaC" target="_blank" rel="noopener">
+        <span class="icon">GH</span>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- MODALS -->
+  <section class="modal" id="p1">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <a class="modal-close" href="#projects">Close</a>
+      <h3 class="modal-title">Bachelor Thesis: Career Path Analysis of UvA Graduates - A Data-Driven Approach:</h3>
+      <p class="modal-text">- Built an end-to-end scalable Python data pipeline (Google Custom Search API, automated LinkedIn scraping, preprocessing) to collect and structure career data for UvA alumni.
+- Engineered career progression features and developed logistic regression models using scikit-learn for model experimentation and validation (stratified cross-validation, class imbalance handling) and statsmodels for statistical inference, analysing predictors of executive career attainment (Director, Partner, CFO), evaluated using F1, ROC-AUC and McFadden's pseudo R².
+- I was incredibly honoured to receive a grade of 9.0/10.0 for this project.</p>
+    </div>
+  </section>
+
+  <section class="modal" id="p2">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <a class="modal-close" href="#projects">Close</a>
+      <h3 class="modal-title">Marketing Analytics:</h3>
+      <p class="modal-text">- Analysed a bubble tea business case by conducting 5C and STP analysis. Used R to compute customer acquisition costs (CAC) for blanket, targeted, and SEM approaches, estimated customer lifetime value (CLV) for foodie and non-foodie segments, and evaluated effect of loyalty programs.
+- Used R to compute break-even response rates and ROI, conducting rule-based RFM segmentation to identify high-response customer segments. Applied K-means clustering as an unsupervised method for segment-level targeting, and implemented decision trees and random forests as supervised models to predict individual response probabilities and compute ROI for model-based targeted marketing.
+- Ran marketing mix modeling regressions in R, interpreted coefficients, and discussed endogeneity issues in Amazon’s pricing context. Applied causal inference techniques, including randomisation and inclusion of instrumental variables, to identify the causal effect of price on sales and implemented two-stage least squares regressions. Designed A/B/N experiments to study causal effects.</p>
+    </div>
+  </section>
+
+  <section class="modal" id="p3">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <a class="modal-close" href="#projects">Close</a>
+      <h3 class="modal-title">Statistical Foundations of Business Analytics:</h3>
+      <p class="modal-text">Conducted exploratory data analysis on firm level sustainability and cost data, examining distributions, skewness, sector differences and relationships between variables. Built and validated a regression model to explain operating expenditure, interpreting key drivers and elasticities, evaluating the impact of initiatives, testing for sector differences and assessing regression assumptions and model limitations.</p>
+    </div>
+  </section>
+
+  <section class="modal" id="p4">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <a class="modal-close" href="#projects">Close</a>
+      <h3 class="modal-title">Business Strategy and Analytics:</h3>
+      <p class="modal-text">Created Python based data visualisation to explore relationships between movie genres, runtimes, and critic scores. Critically assessed a generative AI generated visualisation, focusing on design quality, interpretability, and effectiveness. Interpreted regression coefficients to identify and explain most important insights. Designed a structured employee survey to understand attitudes towards the use of productivity and communications tools in the workplace, applying best practice survey design principles to ensure clarity, validity, and effective data collection.</p>
+    </div>
+  </section>
+
+  <section class="modal" id="p5">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <a class="modal-close" href="#projects">Close</a>
+      <h3 class="modal-title">SkyWest Strategy Proposal:</h3>
+      <p class="modal-text">Conducted regression analysis using airport level operational data from SkyWest Airlines to examine the key drivers of flight delays. Cleaned and prepared the dataset, identified a heavily right skewed distribution of delay minutes, and applied a log transformation to improve model validity by better meeting OLS assumptions. Estimated and interpreted a log-linear regression model with airport fixed effects to control for structural differences across airports. Used regression results and supporting visualisations to identify the most important operational drivers of delays and inform strategic recommendations, including standardised turnaround processes and targeted operational buffers to reduce delay propagation.</p>
+    </div>
+  </section>
+
+  <section class="modal" id="p6">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <a class="modal-close" href="#projects">Close</a>
+      <h3 class="modal-title">Predicting Customer Churn in the Telecommunications Industry Using Machine Learning:</h3>
+      <p class="modal-text">Conducted a machine learning analysis to predict customer churn using a real-world telecommunications dataset. Cleaned and prepared the data by removing invalid empty-string entries that caused preprocessing errors, converting data types, encoding categorical variables, and engineering new features. Performed exploratory data analysis using distributions, boxplots, correlation heatmaps, and churn segmentation to support modelling decisions. Trained and evaluated logistic regression and random forest classifiers for binary churn prediction, comparing performance using accuracy, precision, recall, F1-score, ROC-AUC, and confusion matrices. Assessed multicollinearity using VIF to support model interpretation, and concluded that logistic regression was the stronger and more suitable predictive model for this churn classification task.</p>
+    </div>
+  </section>
+
+  <section class="modal" id="p7">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <a class="modal-close" href="#projects">Close</a>
+      <h3 class="modal-title">HR Analytics, Addressing Talent Turnover for ABS Tech</h3>
+      <p class="modal-text">During my university HR Analytics course, I led a consulting project aimed at tackling high talent turnover at ABS Tech and developing strategic recommendations to enhance employee retention and overall organizational performance. Our team leveraged employee data, conducted data analysis, identified turnover causes, developed strategic recommendations, demonstrated business value, and presented our findings and recommendations in a report as well as a presentation.</p>
+    </div>
+  </section>
+
+  <section class="modal" id="p10">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <a class="modal-close" href="#projects">Close</a>
+      <h3 class="modal-title">Multi-Agent Film Intelligence System</h3>
+      <p class="modal-text">London, United Kingdom | April 2026
+
+- Built a multi-agent AI data pipeline ingesting movie metadata, audience reviews, and plot summaries from 3 sources (TMDB API, Letterboxd scraping, Wikipedia) into 4 specialised databases (PostgreSQL, MongoDB, ChromaDB, Neo4j) with retrieval-augmented generation, sentiment augmentation, and data lineage tracking via Marquez.
+- Developed a LangGraph ReAct two-agent system with locally deployed Ollama LLM, hallucination checking, and 6 custom database tools exposed via FastAPI with SSE streaming, a Model Context Protocol server and Docker containerisation.</p>
+    </div>
+  </section>
+
+  <section class="modal" id="p9">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <a class="modal-close" href="#projects">Close</a>
+      <h3 class="modal-title">University and City Analytics Data Pipeline:</h3>
+      <p class="modal-text">London, United Kingdom | March 2026
+
+- Built an ETL pipeline integrating multiple APIs, scraped data, and public datasets to analyse 500+ universities and 160+ cities.
+- Implemented Spark-based transformations and star-schema joins, producing analytics-ready datasets stored in Parquet.
+- Developed SQL analytics with DuckDB and containerised the workflow using Docker enabling reproducible data processing.</p>
+    </div>
+  </section>
+
+  <section class="modal" id="p8">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <a class="modal-close" href="#projects">Close</a>
+      <h3 class="modal-title">Machine Learning, Final Project Report:</h3>
+      <p class="modal-text">The primary objective of this study was to develop a machine learning model that can accurately predict the popularity of online news articles. Our approach involved analyzing various elements of an article, including its content, emotional impact, and the timing of its publication, to determine how these factors collectively influence the likelihood of an article being shared. After cleaning the data and using various scaling techniques such as Min-Max Scaling, Robust Scaling, and Standard Scaling, we drew correlation heatmaps and boxplots to understand the effect of attributes like the day of the week on the number of shares, ultimately identifying key factors that influence article popularity. Finally, we concluded that the day of the week significantly impacted article popularity, with articles published on certain days (like weekends) demonstrating a higher likelihood of falling into the high engagement category.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2026 Polymnia Christofi. All rights reserved.
+  </footer>
+
+  <script>
+    // Email: keep mailto, but also copy + show "Copied!" on click
+    (function () {
+      const emailLink = document.querySelector(".contact-pill-email");
+      if (!emailLink) return;
+
+      const label = emailLink.querySelector(".contact-email-label");
+      const email = emailLink.getAttribute("data-email") || "polymnaichr@hotmail.com";
+      let resetTimer = null;
+
+      emailLink.addEventListener("click", function () {
+        // Don't prevent default so mailto still opens
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(() => {
+            if (label) {
+              label.textContent = "Copied!";
+              clearTimeout(resetTimer);
+              resetTimer = setTimeout(() => {
+                label.textContent = "Email";
+              }, 1400);
+            }
+          }).catch(() => {
+            // If clipboard fails, do nothing (mailto still works)
+          });
+        }
+      });
+    })();
+
+    // Modal open/close without hash changes or scrolling
+    document.querySelectorAll('.project-card').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var modal = document.querySelector(this.getAttribute('href'));
+        if (modal && modal.classList.contains('modal')) {
+          e.preventDefault();
+          modal.style.display = 'flex';
+        }
+      });
+    });
+
+    document.querySelectorAll('.modal-close, .modal-backdrop').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        el.closest('.modal').style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+
+</html>
